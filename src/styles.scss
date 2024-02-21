@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import './colors.scss';
 
 html {
     height: 100vh;
 }
 
 body {
+    background: linear-gradient(30deg, map-get($theme-colors, 5), map-get($theme-colors, 4));
     font-family: 'Roboto';
     height: 100%;
     margin: 0;

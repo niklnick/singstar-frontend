@@ -1,3 +1,5 @@
+@import "../../colors.scss";
+
 :host {
     align-items: center;
     display: flex;
@@ -5,18 +7,19 @@
     justify-content: center;
 
     .tracks-slider {
-        display: grid;
-        grid-auto-flow: column;
+        display: inline-grid;
         gap: 1rem;
-        padding: 1rem;
-        overflow: auto;
+        grid-auto-flow: column;
+        grid-template-rows: auto auto;
 
         .track-card {
+            background: white;
             border-radius: 4px;
-            box-shadow: 0px 8px 16px hsl(0, 0%, 80%);
+            box-shadow: 0px 8px 16px rgba($color: black, $alpha: .2);
+            height: 22rem;
             overflow: hidden;
             transition: .2s linear;
-            width: 24rem;
+            width: 16rem;
 
             .cover {
                 width: inherit;
@@ -26,12 +29,13 @@
 
                 h1,
                 h2 {
-                    margin: 1rem;
+                    margin: .5rem;
                 }
             }
 
             &:hover {
-                background: adjust-color($color: white, $lightness: -20%);
+                background: map-get($theme-colors, 1);
+                color: white;
                 cursor: pointer;
             }
         }
