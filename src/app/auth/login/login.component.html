@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="logIn(loginForm.value)">
+    <div class="form-field">
+        <label for="username">Username</label>
+        <input autocomplete="username" formControlName="username" id="username" type="text">
+    </div>
+
+    <div class="form-field">
+        <label for="password">Password</label>
+        <input autocomplete="current-password" formControlName="password" id="password" type="password">
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Log in</button>
+</form>
