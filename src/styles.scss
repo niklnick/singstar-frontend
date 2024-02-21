@@ -7,6 +7,7 @@ html {
 
 body {
     background: linear-gradient(30deg, map-get($theme-colors, 5), map-get($theme-colors, 4));
+    color: white;
     font-family: 'Roboto';
     height: 100%;
     margin: 0;
