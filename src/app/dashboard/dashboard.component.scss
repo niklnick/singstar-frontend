@@ -1,0 +1,9 @@
+header {
+    display: grid;
+    justify-content: end;
+
+    .tab {
+        cursor: pointer;
+        padding: 1rem;
+    }
+}
