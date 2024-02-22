@@ -4,23 +4,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { NgxsModule } from '@ngxs/store';
-import { AuthState } from 'src/app/states/auth.state';
+import { AuthState } from 'src/app/core/states/auth.state';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TracksComponent } from './tracks/tracks.component';
-import { HeaderComponent } from './components/ui/header/header.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { SignupComponent } from './core/components/signup/signup.component';
+import { TracksComponent } from './features/tracks/components/tracks/tracks.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { DashboardComponent } from './shared/components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent,
     TracksComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent
   ],
   imports: [
     HttpClientModule,

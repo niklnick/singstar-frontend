@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { LogOut } from 'src/app/states/auth.actions';
-import { AuthState } from 'src/app/states/auth.state';
-import { User } from '../models/user.nodel';
+import { LogOut } from 'src/app/core/states/auth.actions';
+import { AuthState } from 'src/app/core/states/auth.state';
+import { User } from '../../../core/models/user.model';
 
 @Component({
   selector: 'app-dashboard',

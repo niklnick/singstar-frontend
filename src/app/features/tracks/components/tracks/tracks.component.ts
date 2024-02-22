@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Track } from '../models/track.model';
-import { TracksService } from './tracks.service';
+import { Track } from '../../models/track.model';
+import { TracksService } from '../../services/tracks.service';
 
 @Component({
   selector: 'app-tracks',

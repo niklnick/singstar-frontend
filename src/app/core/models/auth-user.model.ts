@@ -1,4 +1,4 @@
-import { User } from "src/app/models/user.nodel";
+import { User } from "src/app/core/models/user.model";
 
 export interface AuthUser {
     readonly user: User;

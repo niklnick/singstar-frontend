@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Action, Selector, State, StateContext } from "@ngxs/store";
 import { Observable, tap } from "rxjs";
-import { AuthService } from "src/app/auth/auth.service";
-import { AuthUser } from "src/app/models/auth-user.model";
-import { User } from "src/app/models/user.nodel";
+import { AuthService } from "src/app/core/services/auth.service";
+import { AuthUser } from "src/app/core/models/auth-user.model";
+import { User } from "src/app/core/models/user.model";
 import { LogIn, LogOut, SignUp } from "./auth.actions";
 
 export interface AuthStateModel {

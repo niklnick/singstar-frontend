@@ -1,5 +1,5 @@
-import { LoginUser } from "src/app/models/login-user.model";
-import { SignupUser } from "src/app/models/signup-user.model";
+import { LoginUser } from "src/app/core/models/login-user.model";
+import { SignupUser } from "src/app/core/models/signup-user.model";
 
 export class SignUp {
     static readonly type: string = '[Auth] Sign Up';
