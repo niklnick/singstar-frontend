@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { SignUp } from 'states/auth.actions';
+import { SignUp } from 'src/app/states/auth.actions';
 import { SignupUser } from '../../models/signup-user.model';
 
 @Component({

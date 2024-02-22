@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { LogOut } from 'states/auth.actions';
-import { AuthState } from 'states/auth.state';
+import { LogOut } from 'src/app/states/auth.actions';
+import { AuthState } from 'src/app/states/auth.state';
 import { User } from '../models/user.nodel';
 
 @Component({

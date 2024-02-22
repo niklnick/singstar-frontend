@@ -4,13 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { NgxsModule } from '@ngxs/store';
-import { AuthState } from 'states/auth.state';
+import { AuthState } from 'src/app/states/auth.state';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TracksComponent } from './tracks/tracks.component';
+import { HeaderComponent } from './components/ui/header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TracksComponent } from './tracks/tracks.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    TracksComponent
+    TracksComponent,
+    HeaderComponent
   ],
   imports: [
     HttpClientModule,
