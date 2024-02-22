@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { AuthUser } from './models/auth-user.model';
-import { LoginUser } from './models/login-user.model';
-import { SignupUser } from './models/signup-user.model';
+import { AuthUser } from '../models/auth-user.model';
+import { LoginUser } from '../models/login-user.model';
+import { SignupUser } from '../models/signup-user.model';
 
 @Injectable({
   providedIn: 'root'

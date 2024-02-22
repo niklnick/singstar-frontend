@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
-import { AuthUser } from '../models/auth-user.model';
-import { SignupUser } from '../models/signup-user.model';
+import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { SignUp } from 'states/auth.actions';
+import { SignupUser } from '../../models/signup-user.model';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,10 @@ import { SignupUser } from '../models/signup-user.model';
 export class SignupComponent {
   readonly signupForm: FormGroup;
 
-  constructor(private readonly authService: AuthService) {
+  constructor(
+    private readonly router: Router,
+    private readonly store: Store
+  ) {
     this.signupForm = new FormGroup({
       email: new FormControl('', Validators.email),
       username: new FormControl('', Validators.required),
@@ -21,8 +25,6 @@ export class SignupComponent {
   }
 
   signUp(signupUser: SignupUser): void {
-    this.authService.signUp(signupUser).subscribe((authUser: AuthUser) => {
-      console.log(authUser);
-    });
+    this.store.dispatch(new SignUp(signupUser)).subscribe(() => this.router.navigate(['dashboard']));
   }
 }

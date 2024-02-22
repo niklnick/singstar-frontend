@@ -1,5 +1,12 @@
 <header>
-    <div class="tab" routerLink="/login">
-        <h2>Login</h2>
-    </div>
+    <ng-container *ngIf="user$ | async; else logout">
+        <div class="tab" (click)="logOut()">
+            <h2>Log out</h2>
+        </div>
+    </ng-container>
+    <ng-template #logout>
+        <div class="tab" routerLink="/login">
+            <h2>Login</h2>
+        </div>
+    </ng-template>
 </header>

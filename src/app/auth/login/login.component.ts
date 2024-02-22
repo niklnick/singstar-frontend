@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
-import { AuthUser } from '../models/auth-user.model';
-import { LoginUser } from '../models/login-user.model';
+import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { LogIn } from 'states/auth.actions';
+import { LoginUser } from '../../models/login-user.model';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,10 @@ import { LoginUser } from '../models/login-user.model';
 export class LoginComponent {
   readonly loginForm: FormGroup;
 
-  constructor(private readonly authService: AuthService) {
+  constructor(
+    private readonly router: Router,
+    private readonly store: Store
+  ) {
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
@@ -20,8 +24,6 @@ export class LoginComponent {
   }
 
   logIn(loginUser: LoginUser): void {
-    this.authService.logIn(loginUser).subscribe((authUser: AuthUser) => {
-      console.log(authUser);
-    });
+    this.store.dispatch(new LogIn(loginUser)).subscribe(() => this.router.navigate(['dashboard']));
   }
 }
